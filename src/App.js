@@ -1,25 +1,16 @@
-// 1. Install dependencies DONE
-// 2. Import dependencies DONE
-// 3. Setup webcam and canvas DONE
-// 4. Define references to those DONE
-// 5. Load posenet DONE
-// 6. Detect function DONE
-// 7. Drawing utilities from tensorflow DONE
-// 8. Draw functions DONE
-
-// Face Mesh - https://github.com/tensorflow/tfjs-models/tree/master/facemesh
+// 1. dasturni yuklab olasiz
+// 2. npm install qilasiz (dastur yuklanishi uchun kerakli kutubxonalar)
+// 3. npm install muvaffaqiyatli bo'lgandan so'ng terminalni ochib npm start deb yozib enter tugmasini bosasiz
+// 4. dastur browserda yuklanadi hamda kamera uchun dostup so'ridi , dostup bersangiz dastur ishga tushadi
 
 import React, { useRef, useEffect } from "react";
 import "./App.css";
 import * as tf from "@tensorflow/tfjs";
 // OLD MODEL
-//import * as facemesh from "@tensorflow-models/facemesh";
-
 // NEW MODEL
 import * as facemesh from "@tensorflow-models/face-landmarks-detection";
 import Webcam from "react-webcam";
 import { drawMesh } from "./utilities";
-
 function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
