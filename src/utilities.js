@@ -2641,7 +2641,6 @@ export const TRIANGULATION = [
   448,
   255,
 ];
-
 // Triangle drawing method
 const drawPath = (ctx, points, closePath) => {
   const region = new Path2D();

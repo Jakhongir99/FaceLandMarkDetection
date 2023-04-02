@@ -12,9 +12,10 @@ function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
-  // Tarmoqni yuklash
+  // Yuz chegaralarini aniqlash funksiyasi
   const runFaceMesh = async () => {
     const net = await faceMesh.load(faceMesh.SupportedPackages.mediapipeFacemesh);
+    console.log(net,"net")
     setInterval(() => {
       detect(net);
     }, 100);
@@ -39,14 +40,11 @@ function App() {
       canvasRef.current.height = videoHeight;
 
       const face = await net.estimateFaces({input:video});
-      console.log(face,"face");
-
       // Get canvas context
       const ctx = canvasRef.current.getContext("2d");
-      drawMesh(face, ctx)
+      drawMesh(face, ctx);
     }
   };
-  console.log(canvasRef,"canvasRef")
   useEffect(()=>{runFaceMesh()}, []);
   return (
     <div className="App">
